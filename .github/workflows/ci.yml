@@ -35,3 +35,21 @@ jobs:
         with:
           name: khronos-comparison
           path: docs/comparison.json
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate a minimal valid asset
+        run: python -c "from pathlib import Path; from tests.assets import make_glb; Path('valid.glb').write_bytes(make_glb())"
+      - name: Run the repository action
+        uses: ./
+        with:
+          files: valid.glb
+          format: json
+          report: action-report.json
+      - name: Verify the action report
+        run: python -c "import json; report=json.load(open('action-report.json')); assert report['results'][0]['status'] == 'pass'"
+

@@ -1,0 +1,66 @@
+name: Asset compatibility report
+description: Report a reproducible PLY or KHR GLB validation problem
+title: "[asset] "
+labels: [compatibility]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Gaussian Splatting interoperability. Do not attach private or non-redistributable scene data.
+  - type: input
+    id: version
+    attributes:
+      label: SplatCheck version
+      placeholder: v0.1.0 or commit SHA
+    validations:
+      required: true
+  - type: dropdown
+    id: profile
+    attributes:
+      label: Asset profile
+      options:
+        - Graphdeco binary PLY
+        - KHR_gaussian_splatting GLB
+        - Other or unknown
+    validations:
+      required: true
+  - type: textarea
+    id: producer
+    attributes:
+      label: Producer and reproduction command
+      description: Include producer/version and the exact export or conversion command.
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: SplatCheck JSON report
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproducer
+    attributes:
+      label: Minimal asset or generator
+      description: Drag in a redistributable file, link to one, or provide an original generator.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Specification or upstream issue
+      placeholder: https://...
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Data permission
+      options:
+        - label: I have permission to redistribute every attached asset and removed private or identifying data.
+          required: true
+

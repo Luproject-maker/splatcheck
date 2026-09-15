@@ -7,6 +7,7 @@ import unittest
 from unittest.mock import patch
 from pathlib import Path
 from splatcheck import check
+from splatcheck.action import expand_patterns, main as action_main
 from tests.assets import make_glb, make_ply
 
 
@@ -119,6 +120,34 @@ class Checks(unittest.TestCase):
             self.assertEqual(result.returncode, expected, result.stderr)
             self.assertEqual(json.loads(result.stdout)["schema_version"], 1)
 
+    def test_action_expands_newline_globs_without_duplicates(self):
+        root = Path(self.temp.name)
+        (root / "nested").mkdir()
+        self.asset(make_ply(), ".ply")
+        (root / "nested" / "scene.glb").write_bytes(make_glb())
+        with patch("splatcheck.action.glob.glob") as expand:
+            expand.side_effect = [[str(root / "asset.ply")],
+                                  [str(root / "asset.ply"), str(root / "nested" / "scene.glb")]]
+            files = expand_patterns("*.ply\n**/*.*\n")
+        self.assertEqual(files, [str(root / "asset.ply"), str(root / "nested" / "scene.glb")])
+
+    def test_action_rejects_empty_file_input(self):
+        with patch.dict("os.environ", {"SPLATCHECK_FILES": ""}, clear=True), \
+                patch("sys.stderr", new_callable=io.StringIO):
+            self.assertEqual(action_main(), 2)
+
+    def test_action_writes_json_report(self):
+        asset = self.asset(make_glb(), ".glb")
+        report = Path(self.temp.name) / "reports" / "splatcheck.json"
+        environment = {"SPLATCHECK_FILES": str(asset), "SPLATCHECK_FORMAT": "json",
+                       "SPLATCHECK_REPORT": str(report)}
+        with patch.dict("os.environ", environment, clear=False), \
+                patch("sys.stdout", new_callable=io.StringIO), \
+                patch("sys.stderr", new_callable=io.StringIO):
+            self.assertEqual(action_main(), 0)
+        self.assertEqual(json.loads(report.read_text(encoding="utf-8"))["results"][0]["status"], "pass")
+
 
 if __name__ == "__main__":
     unittest.main()
+

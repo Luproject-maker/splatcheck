@@ -1,5 +1,7 @@
 # SplatCheck
 
+[![checks](https://github.com/Luproject-maker/splatcheck/actions/workflows/ci.yml/badge.svg)](https://github.com/Luproject-maker/splatcheck/actions/workflows/ci.yml)
+
 CPU-only Gaussian Splatting checks with an original synthetic regression corpus.
 Version 0.1 is an experimental, dependency-free Python CLI. No GPU, training,
 network requests or asset uploads are required.
@@ -18,6 +20,37 @@ splatcheck scene.ply
 Exit code 0 means the supported checks passed. Exit code 1 means a failed,
 unsupported or unreadable asset. Argument errors return 2. JSON reports include
 `schema_version`, per-file status, profile, and stable finding codes.
+
+## GitHub Action
+
+Add SplatCheck to another repository without copying scripts. Provide one path or
+glob pattern per line; expansion happens without evaluating the input in a shell.
+
+```yaml
+name: validate-splats
+on: [push, pull_request]
+
+jobs:
+  splatcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: Luproject-maker/splatcheck@v0.1.0
+        with:
+          files: |
+            assets/**/*.ply
+            assets/**/*.glb
+          format: json
+          report: splatcheck-report.json
+```
+
+The action fails the job when a requested asset fails, is unsupported, cannot be
+read, or when a pattern matches no file. The optional `report` input writes the
+same output printed in the Actions log. Upload it separately with
+`actions/upload-artifact` when retention is needed.
 
 ## Supported checks
 
@@ -80,4 +113,8 @@ Include a valid control. Do not submit private scenes or files without permissio
 Run unit tests and the corpus before opening a change. Add adapters and profiles
 incrementally; unknown semantics should remain explicit.
 
+See [CONTRIBUTING.md](CONTRIBUTING.md), the [security policy](SECURITY.md), and
+the [code of conduct](CODE_OF_CONDUCT.md) before submitting assets or changes.
+
 MIT licensed. No affiliation with Khronos, PlayCanvas, Nerfstudio or OpenAI.
+

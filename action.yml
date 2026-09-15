@@ -1,0 +1,34 @@
+name: SplatCheck
+description: Validate supported Gaussian Splatting PLY and KHR GLB assets without a GPU
+author: Luproject-maker
+branding:
+  icon: check-circle
+  color: purple
+
+inputs:
+  files:
+    description: One file path or glob pattern per line
+    required: true
+  format:
+    description: Report format (text or json)
+    required: false
+    default: text
+  report:
+    description: Optional path where the report output is also written
+    required: false
+    default: ""
+
+runs:
+  using: composite
+  steps:
+    - name: Install SplatCheck
+      shell: bash
+      run: python -m pip install "$GITHUB_ACTION_PATH"
+    - name: Check Gaussian Splatting assets
+      shell: bash
+      env:
+        SPLATCHECK_FILES: ${{ inputs.files }}
+        SPLATCHECK_FORMAT: ${{ inputs.format }}
+        SPLATCHECK_REPORT: ${{ inputs.report }}
+      run: python -m splatcheck.action
+
