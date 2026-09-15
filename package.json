@@ -1,0 +1,7 @@
+{
+  "name": "splatcheck-interop-dev",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Optional external comparison tools, not Python runtime dependencies",
+  "devDependencies": {"gltf-validator": "2.0.0-dev.3.10"}
+}

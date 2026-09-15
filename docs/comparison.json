@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "scope": "Synthetic GLB fixtures only; not an adoption or upstream regression claim",
+  "cases": [
+    {
+      "id": "valid",
+      "sha256": "92fb2c854d5cccbabcad1022f1967c6c433ef52622730fad75a5331d2deae697",
+      "splatcheck": {
+        "file": "valid.glb",
+        "status": "pass",
+        "findings": [],
+        "profile": "khr-glb-float-sh0-3",
+        "splats": 1
+      },
+      "khronos": {
+        "version": "2.0.0-dev.3.10",
+        "issues": {
+          "numErrors": 4,
+          "numWarnings": 0,
+          "numInfos": 1,
+          "numHints": 5,
+          "messages": [
+            {
+              "code": "UNSUPPORTED_EXTENSION",
+              "message": "Cannot validate an extension as it is not supported by the validator: 'KHR_gaussian_splatting'.",
+              "severity": 2,
+              "pointer": "/extensionsUsed/0"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:ROTATION"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SCALE"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:OPACITY"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SH_DEGREE_0_COEF_0"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/POSITION"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:ROTATION"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SCALE"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:OPACITY"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SH_DEGREE_0_COEF_0"
+            }
+          ],
+          "truncated": false
+        }
+      }
+    },
+    {
+      "id": "negative-scale",
+      "sha256": "be79103e6c98d1788b1c5cc292d683b02000cb8a62a1a3e67364ca4d4642a306",
+      "splatcheck": {
+        "file": "negative-scale.glb",
+        "status": "fail",
+        "findings": [
+          {
+            "code": "KHR_SCALE_NEGATIVE",
+            "message": "KHR scale must be linear and non-negative; log encoding may be the cause"
+          }
+        ]
+      },
+      "khronos": {
+        "version": "2.0.0-dev.3.10",
+        "issues": {
+          "numErrors": 4,
+          "numWarnings": 0,
+          "numInfos": 1,
+          "numHints": 5,
+          "messages": [
+            {
+              "code": "UNSUPPORTED_EXTENSION",
+              "message": "Cannot validate an extension as it is not supported by the validator: 'KHR_gaussian_splatting'.",
+              "severity": 2,
+              "pointer": "/extensionsUsed/0"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:ROTATION"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SCALE"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:OPACITY"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SH_DEGREE_0_COEF_0"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/POSITION"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:ROTATION"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SCALE"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:OPACITY"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SH_DEGREE_0_COEF_0"
+            }
+          ],
+          "truncated": false
+        }
+      }
+    },
+    {
+      "id": "opacity-out-of-range",
+      "sha256": "18bfa84be7a1e3052d0327d99b4bcae6e03d0bf2505471500b9969cf551f497c",
+      "splatcheck": {
+        "file": "opacity-out-of-range.glb",
+        "status": "fail",
+        "findings": [
+          {
+            "code": "KHR_OPACITY_RANGE",
+            "message": "KHR opacity must be linear in [0, 1]"
+          }
+        ]
+      },
+      "khronos": {
+        "version": "2.0.0-dev.3.10",
+        "issues": {
+          "numErrors": 4,
+          "numWarnings": 0,
+          "numInfos": 1,
+          "numHints": 5,
+          "messages": [
+            {
+              "code": "UNSUPPORTED_EXTENSION",
+              "message": "Cannot validate an extension as it is not supported by the validator: 'KHR_gaussian_splatting'.",
+              "severity": 2,
+              "pointer": "/extensionsUsed/0"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:ROTATION"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SCALE"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:OPACITY"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SH_DEGREE_0_COEF_0"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/POSITION"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:ROTATION"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SCALE"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:OPACITY"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SH_DEGREE_0_COEF_0"
+            }
+          ],
+          "truncated": false
+        }
+      }
+    },
+    {
+      "id": "zero-quaternion",
+      "sha256": "a8775c0a6eb2dd55d9734d6afa653aea155b3607122c96a11ec4ee04ea572cfd",
+      "splatcheck": {
+        "file": "zero-quaternion.glb",
+        "status": "fail",
+        "findings": [
+          {
+            "code": "KHR_ROTATION_NORM",
+            "message": "KHR rotation must be a unit quaternion"
+          }
+        ]
+      },
+      "khronos": {
+        "version": "2.0.0-dev.3.10",
+        "issues": {
+          "numErrors": 4,
+          "numWarnings": 0,
+          "numInfos": 1,
+          "numHints": 5,
+          "messages": [
+            {
+              "code": "UNSUPPORTED_EXTENSION",
+              "message": "Cannot validate an extension as it is not supported by the validator: 'KHR_gaussian_splatting'.",
+              "severity": 2,
+              "pointer": "/extensionsUsed/0"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:ROTATION"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SCALE"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:OPACITY"
+            },
+            {
+              "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+              "message": "Invalid attribute name.",
+              "severity": 0,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SH_DEGREE_0_COEF_0"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/POSITION"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:ROTATION"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SCALE"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:OPACITY"
+            },
+            {
+              "code": "BUFFER_VIEW_TARGET_MISSING",
+              "message": "bufferView.target should be set for vertex or index data.",
+              "severity": 3,
+              "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SH_DEGREE_0_COEF_0"
+            }
+          ],
+          "truncated": false
+        }
+      }
+    }
+  ]
+}

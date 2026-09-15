@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "splatcheck"
+version = "0.1.0"
+description = "CPU-only Gaussian Splatting asset checks and regression corpus"
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.scripts]
+splatcheck = "splatcheck.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["splatcheck*"]

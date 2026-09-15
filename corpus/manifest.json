@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {"id": "ply-valid", "format": "ply", "expected": "pass", "recipe": {}},
+    {"id": "ply-layout-regression", "format": "ply", "expected": "PLY_PAYLOAD_SIZE_MISMATCH", "recipe": {"extra": "rgb"}},
+    {"id": "glb-valid", "format": "glb", "expected": "pass", "recipe": {}},
+    {"id": "glb-log-scale", "format": "glb", "expected": "KHR_SCALE_NEGATIVE", "recipe": {"scale": -2}},
+    {"id": "glb-opacity", "format": "glb", "expected": "KHR_OPACITY_RANGE", "recipe": {"opacity": 2}}
+  ]
+}
