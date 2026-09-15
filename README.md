@@ -34,8 +34,8 @@ jobs:
   splatcheck:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
       - uses: Luproject-maker/splatcheck@v0.1.0
@@ -117,4 +117,5 @@ See [CONTRIBUTING.md](CONTRIBUTING.md), the [security policy](SECURITY.md), and
 the [code of conduct](CODE_OF_CONDUCT.md) before submitting assets or changes.
 
 MIT licensed. No affiliation with Khronos, PlayCanvas, Nerfstudio or OpenAI.
+
 
