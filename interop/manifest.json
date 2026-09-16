@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "upstream": {
+    "repository": "https://github.com/playcanvas/engine",
+    "commit": "3ee7522039027d98860eec3277220893b5afd871"
+  },
+  "tool": {
+    "package": "@playcanvas/splat-transform",
+    "version": "3.4.2",
+    "repository": "https://github.com/playcanvas/splat-transform"
+  },
+  "assets": [
+    {
+      "id": "sa3d-apartment",
+      "filename": "apartment.sog",
+      "url": "https://raw.githubusercontent.com/playcanvas/engine/3ee7522039027d98860eec3277220893b5afd871/examples/assets/splats/apartment.sog",
+      "bytes": 8379050,
+      "sha256": "961aad67c47e6ee236bd3789978745da6b2ae6afe7f1a0863e05617ef03881d5",
+      "sample_splats": 5000,
+      "license": {
+        "spdx": "CC-BY-4.0",
+        "title": "SA3D_R&D_XP47",
+        "author": "Stephane Agullo",
+        "source": "https://superspl.at/view?id=cdcec084",
+        "notice": "https://github.com/playcanvas/engine/blob/3ee7522039027d98860eec3277220893b5afd871/examples/assets/splats/apartment.txt"
+      }
+    },
+    {
+      "id": "knock-community-hall",
+      "filename": "knock-community-hall.sog",
+      "url": "https://raw.githubusercontent.com/playcanvas/engine/3ee7522039027d98860eec3277220893b5afd871/examples/assets/splats/knock-community-hall.sog",
+      "bytes": 27830709,
+      "sha256": "2c9ef67e619878cdb85d8f972cc6b1b8a8c76cbd7b4ed1137ac97bbd78785202",
+      "sample_splats": 5000,
+      "license": {
+        "spdx": "CC-BY-4.0",
+        "title": "Knock Community Hall",
+        "author": "scbenoit",
+        "source": "https://superspl.at/scene/0ff2e6dc",
+        "notice": "https://github.com/playcanvas/engine/blob/3ee7522039027d98860eec3277220893b5afd871/examples/assets/splats/knock-community-hall.txt"
+      }
+    }
+  ]
+}
+

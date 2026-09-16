@@ -91,6 +91,27 @@ python tools/compare.py --output docs/comparison.json
 
 See [comparison findings](docs/comparison.md). Node is needed only for this adapter.
 
+## Real-world interoperability
+
+The opt-in real-world corpus downloads two pinned, SHA-256-verified PlayCanvas
+Engine scenes with explicit CC BY 4.0 attribution. Pinned
+`@playcanvas/splat-transform` converts each complete SOG input into a bounded
+5,000-splat PLY sample and then an uncompressed KHR GLB. Both derivatives are
+checked by SplatCheck; raw Khronos validator diagnostics are retained separately.
+No third-party scene binary or derived asset is committed to this repository.
+
+```sh
+npm ci --ignore-scripts
+python tools/run_real_interop.py \
+  --output docs/real-interop.json \
+  --markdown docs/real-interop.md
+```
+
+See the [manifest and attribution](interop/README.md) and the
+[latest checked-in results](docs/real-interop.md). Network access is required
+unless the verified originals are supplied through `--cache-dir` with
+`--offline`.
+
 Motivating public reports:
 
 - [GLB scale encoding](https://github.com/playcanvas/splat-transform/issues/267)
@@ -98,8 +119,8 @@ Motivating public reports:
 - [KHR specification](https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_gaussian_splatting/README.md), consulted 2026-09-15.
 
 The repository includes GitHub Actions CI for three OSes and Python versions.
-It runs once the repository is hosted on GitHub; local tests do not establish
-that the hosted matrix has passed. To check your own assets in a Python-enabled CI:
+It also runs both pinned real-world cases on Linux. To check your own assets in a
+Python-enabled CI:
 
 ```sh
 python -m splatcheck path/to/export.glb --format json
@@ -117,5 +138,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md), the [security policy](SECURITY.md), and
 the [code of conduct](CODE_OF_CONDUCT.md) before submitting assets or changes.
 
 MIT licensed. No affiliation with Khronos, PlayCanvas, Nerfstudio or OpenAI.
+
 
 

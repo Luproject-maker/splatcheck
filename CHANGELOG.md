@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Added two pinned, CC BY 4.0 real-world PlayCanvas Engine scenes with explicit
+  attribution, byte-length and SHA-256 verification.
+- Added reproducible SOG → decimated PLY → `KHR_gaussian_splatting` GLB testing
+  with `@playcanvas/splat-transform` 3.4.2 and retained Khronos diagnostics.
+- Added two real-world GitHub Actions jobs without redistributing scene binaries.
+
 ## 0.1.0 — 2026-09-15
 
 - Binary Graphdeco PLY checks, CLI and JSON reports.
@@ -15,4 +23,5 @@
 
 Local verification: 24 unit tests, 5 corpus cases, 4 external comparison cases.
 External adoption remains unverified at initial publication.
+
 

@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "scope": "Pinned CC BY 4.0 real scenes; temporary 5,000-splat derivatives",
+  "upstream": {
+    "repository": "https://github.com/playcanvas/engine",
+    "commit": "3ee7522039027d98860eec3277220893b5afd871"
+  },
+  "tool": {
+    "package": "@playcanvas/splat-transform",
+    "version": "3.4.2",
+    "repository": "https://github.com/playcanvas/splat-transform",
+    "actual_version": "splat-transform v3.4.2 (0cb47cd)"
+  },
+  "summary": {
+    "cases": 2,
+    "passed": 2
+  },
+  "cases": [
+    {
+      "id": "sa3d-apartment",
+      "status": "pass",
+      "failures": [],
+      "license": {
+        "spdx": "CC-BY-4.0",
+        "title": "SA3D_R&D_XP47",
+        "author": "Stephane Agullo",
+        "source": "https://superspl.at/view?id=cdcec084",
+        "notice": "https://github.com/playcanvas/engine/blob/3ee7522039027d98860eec3277220893b5afd871/examples/assets/splats/apartment.txt"
+      },
+      "source": {
+        "filename": "apartment.sog",
+        "url": "https://raw.githubusercontent.com/playcanvas/engine/3ee7522039027d98860eec3277220893b5afd871/examples/assets/splats/apartment.sog",
+        "bytes": 8379050,
+        "sha256": "961aad67c47e6ee236bd3789978745da6b2ae6afe7f1a0863e05617ef03881d5",
+        "producer_info": {
+          "format": "sog",
+          "gaussian": true,
+          "numGaussians": 661466,
+          "numLods": 1,
+          "lodCounts": [
+            661466
+          ],
+          "shBands": 0,
+          "model": "default",
+          "layers": [
+            "position",
+            "geometric",
+            "color"
+          ],
+          "extraColumns": []
+        }
+      },
+      "pipeline": [
+        "SOG -> SH0 5000-splat decimated binary PLY",
+        "binary PLY -> uncompressed KHR_gaussian_splatting GLB"
+      ],
+      "derived": [
+        {
+          "format": "ply",
+          "bytes": 280360,
+          "sha256": "ad1f7c360befc6ca8da11ff595e7211aad4a6a61c219346dd799a4eb3c3b946a",
+          "splatcheck": {
+            "file": "sa3d-apartment.ply",
+            "status": "pass",
+            "findings": [],
+            "profile": "graphdeco-ply",
+            "splats": 5000
+          }
+        },
+        {
+          "format": "glb",
+          "bytes": 301668,
+          "sha256": "81bedc3e9f65369349b0b6a3fbdf87571b63240a53a9111fd400d8714c8b76a2",
+          "splatcheck": {
+            "file": "sa3d-apartment.glb",
+            "status": "pass",
+            "findings": [],
+            "profile": "khr-glb-float-sh0-3",
+            "splats": 5000
+          },
+          "khronos": {
+            "version": "2.0.0-dev.3.10",
+            "issues": {
+              "numErrors": 4,
+              "numWarnings": 0,
+              "numInfos": 1,
+              "numHints": 0,
+              "messages": [
+                {
+                  "code": "UNSUPPORTED_EXTENSION",
+                  "message": "Cannot validate an extension as it is not supported by the validator: 'KHR_gaussian_splatting'.",
+                  "severity": 2,
+                  "pointer": "/extensionsUsed/0"
+                },
+                {
+                  "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+                  "message": "Invalid attribute name.",
+                  "severity": 0,
+                  "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:ROTATION"
+                },
+                {
+                  "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+                  "message": "Invalid attribute name.",
+                  "severity": 0,
+                  "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SCALE"
+                },
+                {
+                  "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+                  "message": "Invalid attribute name.",
+                  "severity": 0,
+                  "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:OPACITY"
+                },
+                {
+                  "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+                  "message": "Invalid attribute name.",
+                  "severity": 0,
+                  "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SH_DEGREE_0_COEF_0"
+                }
+              ],
+              "truncated": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "knock-community-hall",
+      "status": "pass",
+      "failures": [],
+      "license": {
+        "spdx": "CC-BY-4.0",
+        "title": "Knock Community Hall",
+        "author": "scbenoit",
+        "source": "https://superspl.at/scene/0ff2e6dc",
+        "notice": "https://github.com/playcanvas/engine/blob/3ee7522039027d98860eec3277220893b5afd871/examples/assets/splats/knock-community-hall.txt"
+      },
+      "source": {
+        "filename": "knock-community-hall.sog",
+        "url": "https://raw.githubusercontent.com/playcanvas/engine/3ee7522039027d98860eec3277220893b5afd871/examples/assets/splats/knock-community-hall.sog",
+        "bytes": 27830709,
+        "sha256": "2c9ef67e619878cdb85d8f972cc6b1b8a8c76cbd7b4ed1137ac97bbd78785202",
+        "producer_info": {
+          "format": "sog",
+          "gaussian": true,
+          "numGaussians": 1935100,
+          "numLods": 1,
+          "lodCounts": [
+            1935100
+          ],
+          "shBands": 1,
+          "model": "default",
+          "layers": [
+            "position",
+            "geometric",
+            "color"
+          ],
+          "extraColumns": []
+        }
+      },
+      "pipeline": [
+        "SOG -> SH0 5000-splat decimated binary PLY",
+        "binary PLY -> uncompressed KHR_gaussian_splatting GLB"
+      ],
+      "derived": [
+        {
+          "format": "ply",
+          "bytes": 280360,
+          "sha256": "369eed3367b88b616fe9dac20606e680725754118f7b672cce8af4b33bbdf2f3",
+          "splatcheck": {
+            "file": "knock-community-hall.ply",
+            "status": "pass",
+            "findings": [],
+            "profile": "graphdeco-ply",
+            "splats": 5000
+          }
+        },
+        {
+          "format": "glb",
+          "bytes": 301668,
+          "sha256": "5278412ee2fd5cdbffc9a2f67b32f003d0216dfc6927f3d3bb3a003ab012cfc8",
+          "splatcheck": {
+            "file": "knock-community-hall.glb",
+            "status": "pass",
+            "findings": [],
+            "profile": "khr-glb-float-sh0-3",
+            "splats": 5000
+          },
+          "khronos": {
+            "version": "2.0.0-dev.3.10",
+            "issues": {
+              "numErrors": 4,
+              "numWarnings": 0,
+              "numInfos": 1,
+              "numHints": 0,
+              "messages": [
+                {
+                  "code": "UNSUPPORTED_EXTENSION",
+                  "message": "Cannot validate an extension as it is not supported by the validator: 'KHR_gaussian_splatting'.",
+                  "severity": 2,
+                  "pointer": "/extensionsUsed/0"
+                },
+                {
+                  "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+                  "message": "Invalid attribute name.",
+                  "severity": 0,
+                  "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:ROTATION"
+                },
+                {
+                  "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+                  "message": "Invalid attribute name.",
+                  "severity": 0,
+                  "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SCALE"
+                },
+                {
+                  "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+                  "message": "Invalid attribute name.",
+                  "severity": 0,
+                  "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:OPACITY"
+                },
+                {
+                  "code": "MESH_PRIMITIVE_INVALID_ATTRIBUTE",
+                  "message": "Invalid attribute name.",
+                  "severity": 0,
+                  "pointer": "/meshes/0/primitives/0/attributes/KHR_gaussian_splatting:SH_DEGREE_0_COEF_0"
+                }
+              ],
+              "truncated": false
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+
