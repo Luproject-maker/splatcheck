@@ -6,6 +6,7 @@
   attribution, byte-length and SHA-256 verification.
 - Added reproducible SOG → decimated PLY → `KHR_gaussian_splatting` GLB testing
   with `@playcanvas/splat-transform` 3.4.2 and retained Khronos diagnostics.
+- Forced the producer's CPU path so the corpus stays portable on headless CI runners.
 - Added two real-world GitHub Actions jobs without redistributing scene binaries.
 
 ## 0.1.0 — 2026-09-15

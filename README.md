@@ -95,9 +95,9 @@ See [comparison findings](docs/comparison.md). Node is needed only for this adap
 
 The opt-in real-world corpus downloads two pinned, SHA-256-verified PlayCanvas
 Engine scenes with explicit CC BY 4.0 attribution. Pinned
-`@playcanvas/splat-transform` converts each complete SOG input into a bounded
-5,000-splat PLY sample and then an uncompressed KHR GLB. Both derivatives are
-checked by SplatCheck; raw Khronos validator diagnostics are retained separately.
+`@playcanvas/splat-transform` converts each complete SOG input in CPU mode into a
+bounded 5,000-splat PLY sample and then an uncompressed KHR GLB. Both derivatives
+are checked by SplatCheck; raw Khronos validator diagnostics are retained separately.
 No third-party scene binary or derived asset is committed to this repository.
 
 ```sh

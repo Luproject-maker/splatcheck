@@ -8,8 +8,8 @@ and SHA-256 digest. Both assets include upstream CC BY 4.0 notices:
 - **Knock Community Hall**, by scbenoit.
 
 The pinned `@playcanvas/splat-transform` CLI reads each real SOG scene, removes
-higher SH bands if present, decimates it to 5,000 representative splats, writes
-a Graphdeco-style binary PLY, and converts that PLY to an uncompressed
+higher SH bands if present, decimates it in CPU mode to 5,000 representative
+splats, writes a Graphdeco-style binary PLY, and converts that PLY to an uncompressed
 `KHR_gaussian_splatting` GLB. SplatCheck validates both derived files. Khronos
 glTF Validator diagnostics are retained separately and are non-gating because
 the pinned validator does not implement the release-candidate extension.

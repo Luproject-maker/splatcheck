@@ -136,7 +136,12 @@ def run_checked(command, timeout):
 
 
 def tool_info(cli, source, timeout):
-    return json.loads(run_checked(cli + ["-q", str(source), "--info", "json", "null"], timeout))
+    return json.loads(
+        run_checked(
+            cli + ["-q", "--gpu", "cpu", str(source), "--info", "json", "null"],
+            timeout,
+        )
+    )
 
 
 def normalized_check(path):
@@ -159,6 +164,8 @@ def run_case(asset, cache_dir, derived_dir, cli, timeout, offline):
         + [
             "-q",
             "-w",
+            "--gpu",
+            "cpu",
             str(source),
             "--filter-harmonics",
             "0",
@@ -168,7 +175,7 @@ def run_case(asset, cache_dir, derived_dir, cli, timeout, offline):
         ],
         timeout,
     )
-    run_checked(cli + ["-q", "-w", str(ply), str(glb)], timeout)
+    run_checked(cli + ["-q", "-w", "--gpu", "cpu", str(ply), str(glb)], timeout)
 
     ply_report = normalized_check(ply)
     glb_report = normalized_check(glb)
@@ -197,7 +204,7 @@ def run_case(asset, cache_dir, derived_dir, cli, timeout, offline):
             "producer_info": info,
         },
         "pipeline": [
-            f"SOG -> SH0 {expected}-splat decimated binary PLY",
+            f"SOG -> SH0 {expected}-splat CPU-decimated binary PLY",
             "binary PLY -> uncompressed KHR_gaussian_splatting GLB",
         ],
         "derived": [
