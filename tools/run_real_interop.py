@@ -150,6 +150,14 @@ def normalized_check(path):
     return report
 
 
+def write_utf8(path, content):
+    """Write reproducible LF-only reports on every operating system."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="\n") as stream:
+        stream.write(content)
+
+
 def run_case(asset, cache_dir, derived_dir, cli, timeout, offline):
     source = acquire_asset(asset, cache_dir, offline=offline)
     source_verification = verify_asset(source, asset)
@@ -327,13 +335,11 @@ def main():
     }
     encoded = json.dumps(report, indent=2) + "\n"
     if args.output:
-        args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(encoded, encoding="utf-8")
+        write_utf8(args.output, encoded)
     else:
         print(encoded, end="")
     if args.markdown:
-        args.markdown.parent.mkdir(parents=True, exist_ok=True)
-        args.markdown.write_text(render_markdown(report), encoding="utf-8")
+        write_utf8(args.markdown, render_markdown(report))
     return 0 if report["summary"]["passed"] == len(cases) else 1
 
 

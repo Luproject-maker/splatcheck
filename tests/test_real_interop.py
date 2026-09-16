@@ -4,7 +4,13 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tools.run_real_interop import InteropError, load_manifest, render_markdown, verify_asset
+from tools.run_real_interop import (
+    InteropError,
+    load_manifest,
+    render_markdown,
+    verify_asset,
+    write_utf8,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -52,6 +58,12 @@ class RealInteropMetadata(unittest.TestCase):
         rendered = render_markdown(report)
         self.assertIn("| `scene` | 10 | pass (5) | pass (5) | 10 |", rendered)
         self.assertIn("**Scene**, by Author", rendered)
+
+    def test_generated_reports_use_lf_on_every_platform(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "nested" / "report.txt"
+            write_utf8(path, "first\nsecond\n")
+            self.assertEqual(path.read_bytes(), b"first\nsecond\n")
 
 
 if __name__ == "__main__":

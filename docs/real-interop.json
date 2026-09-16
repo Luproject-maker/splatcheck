@@ -51,14 +51,14 @@
         }
       },
       "pipeline": [
-        "SOG -> SH0 5000-splat decimated binary PLY",
+        "SOG -> SH0 5000-splat CPU-decimated binary PLY",
         "binary PLY -> uncompressed KHR_gaussian_splatting GLB"
       ],
       "derived": [
         {
           "format": "ply",
           "bytes": 280360,
-          "sha256": "ad1f7c360befc6ca8da11ff595e7211aad4a6a61c219346dd799a4eb3c3b946a",
+          "sha256": "f7ca4a04d1520f6b0f91f56986528ac82d1e44f802fcf7e0c8567ab0a5ea8a94",
           "splatcheck": {
             "file": "sa3d-apartment.ply",
             "status": "pass",
@@ -69,8 +69,8 @@
         },
         {
           "format": "glb",
-          "bytes": 301668,
-          "sha256": "81bedc3e9f65369349b0b6a3fbdf87571b63240a53a9111fd400d8714c8b76a2",
+          "bytes": 301664,
+          "sha256": "69bc4da0501b2b0e97ff9491ec9a26c1776457b616b1fd372cbf254ab3d85220",
           "splatcheck": {
             "file": "sa3d-apartment.glb",
             "status": "pass",
@@ -158,14 +158,14 @@
         }
       },
       "pipeline": [
-        "SOG -> SH0 5000-splat decimated binary PLY",
+        "SOG -> SH0 5000-splat CPU-decimated binary PLY",
         "binary PLY -> uncompressed KHR_gaussian_splatting GLB"
       ],
       "derived": [
         {
           "format": "ply",
           "bytes": 280360,
-          "sha256": "369eed3367b88b616fe9dac20606e680725754118f7b672cce8af4b33bbdf2f3",
+          "sha256": "c0fa94466b66cfd98fb82fad7d395095e2da4660798179dccf712c3f2cd411b4",
           "splatcheck": {
             "file": "knock-community-hall.ply",
             "status": "pass",
@@ -176,8 +176,8 @@
         },
         {
           "format": "glb",
-          "bytes": 301668,
-          "sha256": "5278412ee2fd5cdbffc9a2f67b32f003d0216dfc6927f3d3bb3a003ab012cfc8",
+          "bytes": 301664,
+          "sha256": "dbe63190f991d38402a28081dd33e53292a1e7f4135f31e5ef67ff6e53924db7",
           "splatcheck": {
             "file": "knock-community-hall.glb",
             "status": "pass",
@@ -232,4 +232,3 @@
     }
   ]
 }
-

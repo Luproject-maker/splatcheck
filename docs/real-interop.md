@@ -17,4 +17,3 @@ Pinned, licensed upstream scenes were processed with `splat-transform v3.4.2 (0c
 Both real scenes pass SplatCheck after the pinned producer converts them to the supported Graphdeco PLY and uncompressed KHR GLB profiles. Khronos glTF Validator diagnostics are retained verbatim but are non-gating: the pinned validator reports `UNSUPPORTED_EXTENSION` and generic attribute-name errors because it does not implement `KHR_gaussian_splatting`.
 
 This verifies structural interoperability and numerical invariants, not rendering or visual equivalence. Decimation preserves real input distributions while bounding CI runtime; the derived 5,000-splat files are not substitutes for the complete scenes.
-
